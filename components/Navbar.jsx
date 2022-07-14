@@ -6,6 +6,7 @@ import {
   MenuItem,
   IconButton,
   Flex,
+  Text,
   Box,
   Spacer,
 } from "@chakra-ui/react";
@@ -14,14 +15,45 @@ import { BsSearch } from "react-icons/bs";
 import { FiKey } from "react-icons/fi";
 
 const Navbar = () => (
-  <Flex flexDirection="row" p="2" borderBottom="1px" borderColor="gray.100">
+  <Flex
+    flexDirection="row"
+    p="2"
+    borderBottom="1px"
+    borderColor="gray.100"
+    justifyContent="flex-start"
+    gap={{ lg: "96", md: "48", sm: "24" }}
+  >
     <Box fontSize="3xl" color="purple.400" fontWeight="bold">
       <Link href="/" paddingLeft="2">
         Estatery
       </Link>
     </Box>
+    <Box display={{ base: "none", md: "none", lg: "initial" }} p="2">
+      <Flex
+        alignItems="center"
+        justifyContent="space-between"
+        gap={12}
+        cursor="pointer"
+      >
+        <Link href="/" passHref>
+          <Text>Home</Text>
+        </Link>
+
+        <Link href="/search" passHref>
+          <Text>Search</Text>
+        </Link>
+
+        <Link href="/search?purpose=for-sale" passHref>
+          <Text>Buy</Text>
+        </Link>
+
+        <Link href="/search?purpose=for-rent" passHref>
+          <Text>Rent</Text>
+        </Link>
+      </Flex>
+    </Box>
     <Spacer />
-    <Box>
+    <Box display={{ base: "initial", md: "initial", lg: "none" }}>
       <Menu>
         <MenuButton
           as={IconButton}
