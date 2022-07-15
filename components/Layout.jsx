@@ -17,7 +17,7 @@ export default function Layout({ children }) {
         <main> {children}</main>
         <footer>
           {" "}
-          <Footer />>
+          <Footer />
         </footer>
       </Box>
     </>
