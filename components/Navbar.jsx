@@ -14,6 +14,13 @@ import { FcMenu, FcHome, FcAbout } from "react-icons/fc";
 import { BsSearch } from "react-icons/bs";
 import { FiKey } from "react-icons/fi";
 
+export const NavMenuItem = ({ to, title }) => (
+  <Box my="2" _hover={{ color: "purple.400", fontWeight: "bold" }}>
+    <Link href={to} passHref>
+      <Text>{title}</Text>
+    </Link>
+  </Box>
+);
 const Navbar = () => (
   <Flex
     flexDirection="row"
@@ -35,11 +42,15 @@ const Navbar = () => (
         gap={12}
         cursor="pointer"
       >
-        <Link href="/" passHref>
+        {/* <Link href="/" passHref>
           <Text>Home</Text>
-        </Link>
+        </Link> */}
+        <NavMenuItem to="/" title="Home" />
+        <NavMenuItem to="/search" title="Search" />
+        <NavMenuItem to="/search?purpose=for-sale" title="Buy" />
+        <NavMenuItem to="/search?purpose=for-rent" title="Rent" />
 
-        <Link href="/search" passHref>
+        {/* <Link href="/search" passHref>
           <Text>Search</Text>
         </Link>
 
@@ -49,7 +60,7 @@ const Navbar = () => (
 
         <Link href="/search?purpose=for-rent" passHref>
           <Text>Rent</Text>
-        </Link>
+        </Link> */}
       </Flex>
     </Box>
     <Spacer />

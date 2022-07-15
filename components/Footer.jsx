@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <Box
       textAlign="center"
-      p="5"
+      pt="5"
       color="gray.600"
       borderTop="1px"
       borderColor="gray.100"
@@ -12,7 +12,8 @@ const Footer = () => {
       w="full"
       bottom={0}
     >
-      2022 Estatery Inc.
+      2022 Estatery Inc. <br />
+      Made with 🔥 by Manish
     </Box>
   );
 };

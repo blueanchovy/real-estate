@@ -31,7 +31,10 @@ export const Search = ({ properties }) => {
       </Flex>
       {searchFilters && <SearchFilters />}
       <Text fontSize="2xl" p="4" fontWeight="bold">
-        Properties {router.query.purpose}
+        Properties{" "}
+        <Text color="green.400" display="inline">
+          {router.query.purpose}
+        </Text>
       </Text>
       <Flex flexWrap="wrap">
         {properties?.map((property) => (
